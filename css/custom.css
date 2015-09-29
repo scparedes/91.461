@@ -1,0 +1,360 @@
+@charset "ISO-8859-1";
+
+/**
+ *  File: /~sparedes/WEB-INF/css/custom.css
+ *  Style Sheet for GUI Programming I
+ *  Santiago C. Paredes, UMass Lowell Computer Science, sparedes@student.uml.edu
+ *  updated by SCP on September 4, 2015 at 07:42 PM
+ *  updated by SCP on September 5, 2015 at 11:37 AM
+ *  updated by SCP on September 7, 2015 at 12:53 AM
+ *  updated by SCP on September 8, 2015 at 11:55 PM
+ *  updated by SCP on September 9, 2015 at 08:38 PM
+ *
+ *
+ *  The @charset directive is required for Google Chrome and Mozilla Firefox.
+ */
+
+
+/* general rules for fonts and shadows for the entire document */
+body {
+     font-family: "Gotham", "Helvetica Neue", "Helvetica", sans-serif;
+     text-shadow: 1px 2px 3px rgba(0,0,0,0.5);
+}
+
+/* the following section-breakdown creates clear visual partitions between each section of
+   the index.
+   influenced by: http://ironsummitmedia.github.io/startbootstrap-scrolling-nav/
+   tips on adding background taken from: http://goo.gl/i7mCfp  */
+.intro-section {
+    height: 100vh; /* ensuring that our design fits the entire viewpoint -- that is the entire screen, not the page */
+    padding-top: 100px;
+    text-align: center;
+    background: url("../img/lines.jpg") no-repeat center center fixed; /* http://wallpaperswide.com/colored_lines-wallpapers.html */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.assignments-section {
+    height: 100%;
+    padding-top: 100px;
+    text-align: center;
+    background-image: url("../img/noisy_net.png"); /* http://subtlepatterns.com/noisy-net/ */
+    background-repeat: repeat;
+}
+
+.about-section {
+    height: 100%;
+    padding-top: 100px;
+    text-align: center;
+    background: url("../img/screen.jpg") no-repeat center center fixed; /* http://wallpaperswide.com/behind_grid-wallpapers.html */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.contact-section {
+    height: 100vh;
+    padding-top: 100px;
+    text-align: center;
+    background: url("../img/mustang.jpg") no-repeat center center fixed; /* http://wallpaperswide.com/behind_grid-wallpapers.html */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* the following describe font sizes, justifications, colors, shadows, 
+   and alignments */
+
+li, ul {
+    font-size: 110%;
+    text-align: justify;
+    color: #fffffb;
+}
+
+p {
+    color: #fffffb;
+    font-size: 140%;
+    text-align: justify;
+}
+
+p.center {
+  text-align: center;
+}
+
+a {
+  color: #ffcd33;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffcd33;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 3px 4px 5px rgba(0,0,0,0.5);
+}
+
+h1 {
+    font-size: 600%;
+}
+
+h2 {
+    font-size: 400%;
+}
+
+h3 {
+    font-size: 200%;
+}
+
+/* used when content could use more visual space -- a little too hacky for my liking, 
+   will change in future */
+.extra-pad {
+    padding: 30px 50px 50px 50px;
+}
+
+/* places the btn-circle towards the bottom/middle of the section */
+div.bottom {
+    position:absolute;
+    width:300px;
+    height:0%;
+    bottom:10%;
+    right:25%;
+    left:50%;
+    margin-left:-150px;
+}
+
+/* resizing an image to be smaller */
+img.smaller {
+    width: 35%;
+    height: 35%;
+}
+
+/* shadowing used for images: http://goo.gl/gmGr8B */
+img.box-shad {
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* the following creates a button circle class that is exclusively used to  
+   scroll down to the next section. I used this technique at:
+   www.cs.uml.edu/~sparedes/
+   it was inspired by a button in the grayscale bootstrap template
+*/
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 4px solid #fff;
+    border-radius: 35px;
+    font-size: 40px;
+    color: #ffcd33;
+    background: 0 0;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+.btn-circle:hover,
+.btn-circle:focus {
+    outline: 0;
+    color: #ffcd33;
+    background: rgba(255,255,255,.1);
+}
+
+.btn-circle i.animated {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+}
+
+.btn-circle:hover i.animated {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+}
+
+@-webkit-keyframes pulse {    
+    0 {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes pulse {    
+    0 {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -moz-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+/* the following custom button configurations were generated mostly with the link directly below:
+   http://twitterbootstrapbuttons.w3masters.nl/?color=%23ffcd33                         */
+.btn-custom-lighten.active {
+    color: rgba(255, 255, 255, 0.75);
+}
+.btn-custom-lighten {
+    color: #000;
+    font-size: 150%;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #ffd247;
+    background-image: -moz-linear-gradient(top, #ffcd33, #ffda66);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffcd33), to(#ffda66));
+    background-image: -webkit-linear-gradient(top, #ffcd33, #ffda66);
+    background-image: -o-linear-gradient(top, #ffcd33, #ffda66);
+    background-image: linear-gradient(to bottom, #ffcd33, #ffda66);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffcd33', endColorstr='#ffffda66', GradientType=0);
+    border-color: #ffda66 #ffda66 #ffc719;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #ffda66;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-custom-lighten:hover,
+.btn-custom-lighten:focus,
+.btn-custom-lighten:active,
+.btn-custom-lighten.active,
+.btn-custom-lighten.disabled,
+.btn-custom-lighten[disabled] {
+    color: #282828;
+    background-color: #ffda66;
+    *background-color: #ffd34c;
+}
+.btn-custom-lighten:active,
+.btn-custom-lighten.active {
+    background-color: #ffcd33 ;
+}
+
+/* setting font properties of navbar: http://presscustomizr.com/snippet/change-navbar-colorsfontsize/ */
+.navbar .nav > li > a, .navbar .nav > li > a,
+.navbar .nav > li.current-menu-item > a, 
+.navbar .nav > li.current-menu-ancestor > a {                  
+    font-family:    "Gotham", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size:      1.5em;
+    text-transform: uppercase;
+}
+
+/* navbar shadowing: http://goo.gl/cqGcGE */
+.navbar-default {
+    -webkit-box-shadow: 0 100px 6px -6px #000;
+    -moz-box-shadow: 0 100px 6px -6px #000;
+    box-shadow: 0 8px 100px -6px #000;
+}
+
+/* below are custom-generated navbar color-schemes I generated online.
+   navbar colors generated by: http://work.smarchal.com/twbscolor/css/ffcd3303102e03102efffffb0 */
+.navbar-default {
+    background-image: url("../img/white_carbonfiber.png");
+    background-blend-mode: luminosity; /* SCP: blended background-image with background color */
+    background-repeat: repeat;
+    background-color: #ffcd33;
+    border-color: #000;
+    text-transform: uppercase;
+}
+.navbar-default .navbar-brand {
+  color: #03102e;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #fffffb;
+}
+.navbar-default .navbar-text {
+  color: #03102e;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #03102e;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #fffffb;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #fffffb;
+  background-color: #03102e;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #fffffb;
+  background-color: #03102e;
+}
+.navbar-default .navbar-toggle {
+  border-color: #03102e;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #03102e;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #03102e;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #03102e;
+}
+.navbar-default .navbar-link {
+  color: #03102e;
+}
+.navbar-default .navbar-link:hover {
+  color: #fffffb;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open > li > a {
+    color: #03102e;
+  }
+  .navbar-default .navbar-nav .open > li > a:hover, .navbar-default .navbar-nav .open > li > a:focus {
+    color: #fffffb;
+  }
+  .navbar-default .navbar-nav .open > .active > a, .navbar-default .navbar-nav .open > .active > a:hover, .navbar-default .navbar-nav .open > .active > a:focus {
+    color: #fffffb;
+    background-color: #03102e;
+  }
+}
+
+/* below is the transition for collapsing the navbar when the user scrolls 
+   down from the top of the page -- this was taken from a grayscale template 
+   that I used at:
+   www.cs.uml.edu/~sparedes/
+*/
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+/* colors codes were easily generated here: http://www.computerhope.com/htmcolor.htm */
+/* cool fonts: https://24ways.org/2012/how-to-make-your-site-look-half-decent/ */

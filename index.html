@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Santiago Paredes - 91.461 Index</title>
+
+    <!--
+        File: /~sparedes/WEB-INF/index.html
+        91.461 Assignment: Creating Your First Web Page
+        Santiago C. Paredes, UMass Lowell Computer Science, sparedes@cs.uml.edu
+        updated by SCP on September 5, 2015 at 5:50pm
+        updated by SCP on September 7, 2015 at 11:55pm
+        This is a minimal index page for demonstrating basic structure of assignments.
+    -->
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link id="pagestyle" rel="stylesheet" type="text/css" href="css/custom.css">
+    <link type="text/css" rel="alternate stylesheet" href="css/black.css"/>
+
+    <!-- Google Fonts -->
+   <link href='http://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  </head>
+
+
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- 
+      techniques for navbar, links, and other toggling content inspired by: 
+      http://ironsummitmedia.github.io/startbootstrap-scrolling-nav/ 
+    -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand page-scroll" href="#page-top">Santiago Paredes</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+            <li class="hidden">
+              <a class="page-scroll" href="#page-top"></a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#assignments">Assignments</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#about">About</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
+      <div class="center">
+        <h1>GUI Programming I</h1>
+        <h2>Santiago Paredes</h2>
+        <h3>2015 Fall Semester</h3>
+      </div>
+      <div class="text-center extra-pad bottom">
+        <a href="#assignments" class="btn btn-circle page-scroll">
+          <i class="fa fa-angle-double-down animated"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="assignments" class="assignments-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="grad">Assignments</h2>
+            <p>Welcome! Normally you'll find a list of assignments here. For now, the only assignment
+              listed is just a link to the top of this page.</p>
+            <ul>
+              <li>
+                <a class="page-scroll" onclick="swapStyleSheet('css/custom.css')" href="#page-top">Assignment 1 and 2</a>
+              </li>
+              <li>
+                <a class="page-scroll" onclick="swapStyleSheet('css/black.css')" href="#page-top">Assignment 3</a>
+              </li>
+              <li>Future assignment 4</li>
+              <li>Future assignment 5</li>
+              <li>Future assignment 6</li>
+              <li>Future assignment 7</li>
+              <li>Future assignment 8</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="text-center extra-pad">
+        <a class="btn btn-custom-lighten page-scroll" href="#about">Go To About</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>About</h2>
+            <div class="extra-pad">
+              <img src="img/santi.jpg" alt="" class="img-rounded center-block img-responsive box-shad smaller">
+            </div>
+            <p>I'm a student at UMASS Lowell. My interests include playing music, 
+              programming, and thinking. My interests have manifested themselves in a 
+              number of unique ways and, as a result, I am involved with several different 
+              extracurricular activities that have done well to define and diversify my 
+              college career and young adult experience.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center extra-pad">
+        <a class="btn btn-custom-lighten page-scroll" href="#contact">Go To Contact</a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>Contact</h2>
+            <p>Feel free to email me about any interests you'd have in working with me as an 
+              entertainer, a programmer, or a thinker, or to just say hello!</p>
+            <p class="center"><a href="mailto:santiago_paredes@student.uml.edu">santiago_paredes@student.uml.edu</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+
+    <!-- Index-Swapping Stylesheet JavaScript -->
+    <script src="js/change-css.js"></script>
+
+  </body>
+</html>
+
