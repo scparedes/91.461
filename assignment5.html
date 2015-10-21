@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Santiago Paredes - 91.461 Assignment 5</title>
+
+    <!--
+        File: /~sparedes/WEB-INF/assignment5.html
+        91.461 Assignment 5
+        Santiago C. Paredes, UMass Lowell Computer Science, sparedes@cs.uml.edu
+        updated by SCP on October 5, 2015 at 5:50pm
+        This is a minimal assignment 5 for demonstrating basic structure and use of JSON, JQuery, and AJAX.
+    -->
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link id="pagestyle" rel="stylesheet" type="text/css" href="css/custom.css">
+
+  </head>
+
+  <body class="assignments-section">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand page-scroll" href="index.html#page-top">Santiago Paredes</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+            <li class="hidden">
+              <a class="page-scroll" href="index.html#page-top"></a>
+            </li>
+            <li>
+              <a class="page-scroll" href="index.html#assignments">Assignments</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="index.html#about">About</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="index.html#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <div id="content"></div>
+  </body>
+
+</html>
+
+
+<!-- The following javascript was taken from Jesse Heines at https://teaching.cs.uml.edu/~heines/91.461/91.461-2015-16f/461-assn/FormattingText-v05.jsp -->
+
+<!--
+  load jQuery library from the Google Content Delivery Network (CDN)
+  see http://encosia.com/3-reasons-why-you-should-let-google-host-jquery-for-you/
+  however, note that you obviously must be online for this to work
+  alternatively, you can download jQuery and store it locally from
+     http://jquery.com/download/
+-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- load the JSON file containing the text of Lincoln's Gettysburg address -->
+<script type="text/javascript">
+  // this function will run after the body has been loaded
+  jQuery(document).ready( function() {
+    jQuery.get( "docs/document.json", function( data ) {
+      placeContent( data ) ;  // construct output from the data read
+    }, "json" );  // be sure to include this third parameter for weblab.cs.uml.edu
+  });
+</script>
+
+<!-- script to place JSON text in the placeholder on this page -->
+<script type="text/javascript">
+  // N.B.  This version *does* apply the CSS.
+  function placeContent( story ) {
+    var strContent = "";
+
+    // create dynamic content from JSON
+    strContent += "<h1 class='title'>" + story.title + "</h1>" ;
+    strContent += "<h2 class='author'>by " + story.author + "</h2>" ;
+    strContent += "<h2 class='authorsTitle'>" + story.authorsTitle + "</h2>" ;
+    strContent += "<h3 class='locationLabel'>delivered at: " + story.locationLabel + "</h3>" ;
+    strContent += "<h3 class='location'>" + story.location + "</h3>" ;
+    strContent += "<h3 class='chapter'>" + story.chapter + "</h3>" ;
+
+    // loop through all the paragraphs and sentences
+    for ( var para = 0 ; para < story.paragraphs.length ; para++ ) {
+      strContent += "<p>" ;
+      for ( var sent = 0 ; sent < story.paragraphs[para].length ; sent++ ) {
+        strContent += story.paragraphs[para][sent];
+      }
+      strContent += "</p>" ;
+    }
+
+    // place dynamic content on page
+    // document.getElementById( "content" ).innerHTML = strContent ;
+    $("#content").html( strContent ) ;
+  }
+</script>
