@@ -8,8 +8,9 @@
         File: /~sparedes/WEB-INF/assignment5.html
         91.461 Assignment 6
         Santiago C. Paredes, UMass Lowell Computer Science, sparedes@cs.uml.edu
-        updated by SCP on October 5, 2015 at 5:50pm
-        This is a minimal assignment 5 for demonstrating basic structure and use of JSON, JQuery, and AJAX.
+        updated by SCP on October 12, 2015 at 3:50pm
+        updated by SCP on October 20, 2015 at 9:50pm
+        This demonstrates how a multiplication table can be created completely dynamically based on parameters entered by a user in an HTML form below.    
     -->
 
     <!-- Bootstrap -->
@@ -20,6 +21,7 @@
 
     <!-- Javascript -->
     <script src="js/jquery.js"></script>
+    <script src="js/validator.js"></script>
     <script src="js/multiplication.js"></script>
   </head>
 
@@ -73,38 +75,50 @@
               <div class="extra-pad"><h3>Enter your numbers</h3></div>
             </div>
 
+            <!--
+            Validation occurs through a 3rd party library, validator.js.
+            The most notable nuances of validator.js's functionality is its ability to take a regex pattern and use it to confirm whether or not text adheres to a certain format. In my case, I created a pattern that will accept any 1-digit integer, e.g. 1, -1, +1.
+            It's worth noting that there is a help-block div after each input so that a user can be notified if a data error has occured.
+            -->
 
-            <form id="multForm" class="form-inline" method="GET" action="javascript:insertTable();">
-              <div class="form-group">
-                <label for="exampleInputEmail1">1st multiplier</label>
-                <input type="text" class="form-control" id="firstMultiplier" name="firstMultiplier" placeholder="e.g. -3">
+            <form id="multForm" data-toggle="validator" role="form" method="GET" action="javascript:createTable();">
+              <div class="form-group col-xs-2">
+                <label for="firstMultiplier" class="control-label">1st multiplier</label>
+                <input type="text" pattern="(?:[-,+])?[0-9]{0,1}" class="form-control" id="firstMultiplier" name="firstMultiplier" placeholder="e.g. -3" data-error="Please enter a 1-digit integer" required>
+                <div class="help-block with-errors"></div>
               </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">2nd multiplier</label>
-                <input type="text" class="form-control" id="secondMultiplier" name="secondMultiplier" placeholder="e.g. 4">
+              <div class="form-group col-xs-2">
+                <label for="secondMultiplier" class="control-label">2nd multiplier</label>
+                <input type="text" pattern="(?:[-,+])?[0-9]{0,1}" class="form-control" id="secondMultiplier" name="secondMultiplier" placeholder="e.g. 4" data-error="Please enter a 1-digit integer" required>
+                <div class="help-block with-errors"></div>
               </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">1st multiplicand</label>
-                <input type="text" class="form-control" id="firstMultiplicand" name="firstMultiplicand" placeholder="e.g. -2">
+              <div class="form-group col-xs-2">
+                <label for="firstMultiplicand" pattern="(?:[-,+])?[0-9]{0,1}" class="control-label">1st multiplicand</label>
+                <input type="text" class="form-control" id="firstMultiplicand" name="firstMultiplicand" placeholder="e.g. -2" data-error="Please enter a-1 digit integer" required>
+                <div class="help-block with-errors"></div>
               </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">2nd multiplicand</label>
-                <input type="text" class="form-control" id="secondMultiplicand" name="secondMultiplicand"placeholder="e.g. 1">
+              <div class="form-group col-xs-2">
+                <label for="secondMultiplicand" pattern="(?:[-,+])?[0-9]{0,1}" class="control-label">2nd multiplicand</label>
+                <input type="text" class="form-control" id="secondMultiplicand" name="secondMultiplicand"placeholder="e.g. 1" data-error="Please enter a 1-digit integer" required>
+                <div class="help-block with-errors"></div>
               </div>
               <div class="extra-pad">                            
-                <button type="submit" class="btn btn-default" onclick="validate();">Submit</button>
+                <button type="submit" class="btn btn-default">Submit</button>
               </div>
             </form>
           </div>
         </div>
       </div>
+      <!-- 
+      The multiplication table is displayed here, centered and almost full-length to accommodate a max-ranged table
+      -->
+      <div class="row">
+        <div class="col-lg-10 table-centered">
+          <table id="multTable" class="table table-striped table-bordered">
+          </table>
+        </div>
+      </div>
     </div>
-
-    <p><div id="multTable"></div></p>
-<!-- <table class="table table-striped table-bordered">
-  
-</table> -->
-
   </body>
 
 </html>

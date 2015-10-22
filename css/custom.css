@@ -115,10 +115,26 @@ h3 {
     font-size: 200%;
 }
 
+/* coloring for the multiplication table in assignment6.html */
+tr:nth-child(even) {
+  background: #ffcd33;
+}
+
+/* found this selector by inspecting the element of the bootstrap table */
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+  border: 1px solid #000;
+}
+
 /* used when content could use more visual space -- a little too hacky for my liking, 
    will change in future */
 .extra-pad {
     padding: 30px 50px 50px 50px;
+}
+
+/* used to center div that contains a table */
+div.table-centered {
+  margin: 0 auto !important;
+  float: none !important;
 }
 
 /* places the btn-circle towards the bottom/middle of the section */

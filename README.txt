@@ -16,10 +16,13 @@ Same deal as my last submission.  Certain color arrangements for the navbar and 
 There are also complaints coming from the webkit/moz/o transition-ers and background descriptors.  I don't think the use of these tools in my css will cause any major/minor issues in your testing.
 
 Assignment 4:
+Github URL: http://scparedes.github.io/91.461/
 
 Assignment 5:
+Github URL: http://scparedes.github.io/91.461/assignment5.html
 
 Assignment 6:
+Github URL: http://scparedes.github.io/91.461/assignment6.html
 
 Assignment 7:
 
