@@ -5,6 +5,7 @@
  * updated by SCP on October 13, 2015 at 12:34 PM
  * updated by SCP on October 15, 2015 at 06:29 AM
  * updated by SCP on October 22, 2015 at 12:31 AM
+ * updated by SCP on October 23, 2015 at 11:50 AM
  */
 
 // createTable() builds and inserts a multiplication table into an html page through the multTable id.
@@ -13,7 +14,8 @@ function createTable() {
 	secondMultiplier = parseInt(document.getElementById('secondMultiplier').value);
 	firstMultiplicand = parseInt(document.getElementById('firstMultiplicand').value);
 	secondMultiplicand = parseInt(document.getElementById('secondMultiplicand').value);
-	// var params={};window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(str,key,value){params[key] = value;});
+	// this one-liner collects the parameters in the url and creates a dictionary of the parameters
+	// // var params={};window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(str,key,value){params[key] = value;});
 
 	// organize the multipliers and multiplicands and distribute them to the max and min table values
 	var multipliers = [firstMultiplier, secondMultiplier].sort();
