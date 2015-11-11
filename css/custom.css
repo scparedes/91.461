@@ -115,6 +115,9 @@ h3 {
     font-size: 200%;
 }
 
+#firstMultiplier-error, #secondMultiplier-error, #firstMultiplicand-error, #secondMultiplicand-error {
+  color: #d40000;
+}
 /* coloring for the multiplication table in assignment6.html */
 tr:nth-child(even) {
   background: #ffcd33;

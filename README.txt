@@ -25,5 +25,6 @@ Assignment 6:
 Github URL: http://scparedes.github.io/91.461/assignment6.html
 
 Assignment 7:
+Github URL: http://scparedes.github.io/91.461/assignment7.html
 
 Assignment 8:

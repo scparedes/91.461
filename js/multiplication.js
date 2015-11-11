@@ -6,6 +6,7 @@
  * updated by SCP on October 15, 2015 at 06:29 AM
  * updated by SCP on October 22, 2015 at 12:31 AM
  * updated by SCP on October 23, 2015 at 11:50 AM
+ * updated by SCP on October 30, 2015 at 07:28 PM
  */
 
 // createTable() builds and inserts a multiplication table into an html page through the multTable id.
@@ -18,16 +19,20 @@ function createTable() {
 	// // var params={};window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(str,key,value){params[key] = value;});
 
 	// organize the multipliers and multiplicands and distribute them to the max and min table values
-	var multipliers = [firstMultiplier, secondMultiplier].sort();
+	var multipliers = [firstMultiplier, secondMultiplier].sort(function(a,b){return a - b});
 	var minHorizontal = multipliers[0];
 	var maxHorizontal = multipliers[1];
-	var multiplicands = [firstMultiplicand, secondMultiplicand].sort();
+	var multiplicands = [firstMultiplicand, secondMultiplicand].sort(function(a,b){return a - b});
 	var minVertical = multiplicands[0];
 	var maxVertical = multiplicands[1];
 
 	var difference = function (a, b) { return Math.abs(a - b) }
 
 	// set the dimensions of the table, accounting for blank cells and inclusive range (+2)
+	console.log(minVertical, maxVertical);
+	console.log(difference(minVertical, maxVertical));
+	console.log(minHorizontal, maxHorizontal);
+	console.log(difference(minHorizontal, maxHorizontal));
 	verticalDimension = difference(minVertical, maxVertical) + 2;
 	horizontalDimension = difference(minHorizontal, maxHorizontal) + 2;
 
