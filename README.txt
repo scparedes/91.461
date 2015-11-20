@@ -28,3 +28,5 @@ Assignment 7:
 Github URL: http://scparedes.github.io/91.461/assignment7.html
 
 Assignment 8:
+Github URL: http://scparedes.github.io/91.461/assignment8.html
+I am currently struggling to get the tabs to add and delete without affecting the data that's bound to the sliders.  This problem may or may not persist by the time you grade this.
