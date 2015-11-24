@@ -118,6 +118,14 @@ h3 {
 #firstMultiplier-error, #secondMultiplier-error, #firstMultiplicand-error, #secondMultiplicand-error {
   color: #d40000;
 }
+
+#dialog label, #dialog input { display:block; }
+#dialog label { margin-top: 0.5em; }
+#dialog input, #dialog textarea { width: 95%; }
+#tabs { margin-top: 1em; }
+#tabs li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+#add_tab { cursor: pointer; }
+
 /* coloring for the multiplication table in assignment6.html */
 tr:nth-child(even) {
   background: #ffcd33;
@@ -149,6 +157,14 @@ div.bottom {
     right:25%;
     left:50%;
     margin-left:-150px;
+}
+
+div.checks label{
+/*    display: table;
+    width: 100%;
+    table-layout: fixed;    /* For cells of equal size */*/
+    padding-left: 10px;
+    padding-right: 60px;
 }
 
 /* resizing an image to be smaller */
