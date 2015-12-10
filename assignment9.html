@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Santiago Paredes - 91.461 Assignment 9</title>
+
+    <!--
+        File: /~sparedes/WEB-INF/assignment8.html
+        91.461 Assignment 8
+        Santiago C. Paredes, UMass Lowell Computer Science, sparedes@cs.uml.edu
+        updated by SCP on November 30, 2015 at 5:27pm
+        updated by SCP on December 01, 2015 at 4:21pm
+        updated by SCP on December 02, 2015 at 3:05am
+        updated by SCP on December 07, 2015 at 3:05am
+        This demonstrates how a multiplication table can be created completely dynamically based on parameters entered by a user in an HTML form below.  
+    -->
+
+    <!-- Bootstrap CSS -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link id="pagestyle" rel="stylesheet" type="text/css" href="css/custom.css">
+    <link type="text/css" rel="stylesheet" href="css/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="css/jquery-ui.structure.min.css">
+    <link type="text/css" rel="stylesheet" href="css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="css/scrabble.css">
+
+
+    <!-- Javascript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui-git.js"></script>
+
+    <!-- Javascript for scrabble rules and tiling -->
+    <script src="js/scrabble.js"></script>
+
+  </head>
+
+  <body class="assignments-section">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand page-scroll" href="index.html#page-top">Santiago Paredes</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+            <li class="hidden">
+              <a class="page-scroll" href="index.html#page-top"></a>
+            </li>
+            <li>
+              <a class="page-scroll" href="index.html#assignments">Assignments</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="index.html#about">About</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="index.html#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+
+    <div id="container">
+      <div class="row">
+        <div class="col-lg-12">
+	        <div class="extra-pad">
+	          <img src="img/scrabble.jpg" alt="" class="img-rounded center-block img-responsive box-shad smaller">
+	        </div>
+		      <h2>Scrabble</h2>
+          <h3>with JQuery Drag and Drop</h3>
+
+	        <div class="extra-pad">
+	          <p>
+	            Below you will notice that a portion of the familiar Scrabble board has been displayed along with seven letter tiles.  You need to drag tiles from your letter "rack" to the board to make a word, and you will consequently receive a report of your score (letter values and bonus squares will be taken into consideration).  Give it a try!
+	          </p>
+	          <div class="extra-pad"><h3>Play Scrabble!</h3></div>
+          	<div>
+          		<!-- a tallied score (including consideration of bonus square multipliers) displays dynamically -->
+          		<ul class="column">
+          			<li id="score" class="score-box col-md-2 col-md-offset-5"></li>
+          		</ul>
+          	</div>
+          	<!-- a multi-line scrabble board of target squares, including bonus squares -->
+	          <div id="scrabble_board">
+	          	<div class="droppable ui-droppable scrabble_board_square">
+	          		<img alt="doubleletter" src="img/double_letter_square.png">
+	          	</div>
+	          	<div class="droppable ui-droppable" style="margin: 5px">
+	          		<img alt="plain" src="img/plain_square.png">
+	          	</div>
+	          	<div class="droppable ui-droppable" style="margin: 5px">
+	          		<img alt="plain" src="img/plain_square.png">
+	          	</div>
+	          	<div class="droppable ui-droppable scrabble_board_square">
+	          		<img alt="plain" src="img/plain_square.png">
+	          	</div>
+	          	<div class="droppable ui-droppable scrabble_board_square">
+	          		<img alt="tripleword" src="img/triple_word_square.png">
+	          	</div>
+	          	<div class="droppable ui-droppable scrabble_board_square">
+	          		<img alt="plain" src="img/plain_square.png">
+	          	</div>
+	          	<div class="droppable ui-droppable scrabble_board_square">
+	          		<img alt="plain" src="img/plain_square.png">
+	          	</div>
+	          	<div class="droppable ui-droppable scrabble_board_square">
+	          		<img alt="doubleletter" src="img/double_letter_square.png">
+	          	</div>
+	          	<div class="droppable ui-droppable scrabble_board_square">
+	          		<img alt="plain" src="img/plain_square.png">
+	          	</div>
+	          	<div class="droppable ui-droppable scrabble_board_square">
+	          		<img alt="plain" src="img/plain_square.png">
+	          	</div>
+	          </div>
+	          <div class="extra-pad"></div>
+	          <!-- a nice looking scrabble rack appears to hold the player's hand -->
+	          <div class="rack_container">
+	          	<!-- the user's letter tiles are single draggable images here -->
+	          	<div id="rack" class="droppable ui-droppable"></div>
+	          </div>
+		    </div>
+		  </div>
+		</div>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+  </body>
+
+</html>

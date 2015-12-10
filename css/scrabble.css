@@ -1,0 +1,74 @@
+@charset "ISO-8859-1";
+
+/**
+ *  File: /~sparedes/WEB-INF/css/scrabble.css
+ *  Style Sheet for Scrabble Game
+ *  Santiago C. Paredes, UMass Lowell Computer Science, sparedes@student.uml.edu
+ *  updated by SCP on December 05, 2015 at 05:23 PM
+ *  updated by SCP on December 06, 2015 at 01:52 PM
+ *  updated by SCP on December 07, 2015 at 12:07 PM
+ *
+ *  The @charset directive is required for Google Chrome and Mozilla Firefox.
+ */
+
+/* the following code creates a nice display for the score box*/
+ul.column {
+	float: left;
+	padding: 0;
+	list-style: none;
+	width: 100%;
+}
+ul.column li {
+	background: #fff;
+	float: left;
+	margin: 25px 0 0 25px;
+	display: block;
+	text-align: center;
+	width: 200px;
+	height: 50px;
+	padding:10px;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+ul.column li.score-box {
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	color:#000;
+}
+li.score-box p {
+	color: #000;
+}
+
+/* clean and familiar looking scabble rack */
+.rack_container {
+	text-align: center;
+	margin:-50px 0 0;
+    padding:50px 0 0 0;
+	background: url("../img/Scrabble_Rack_flat.resized.png") no-repeat center;
+}
+
+/* ensures the horizontal scrabble squares are displayed side by side */
+.scrabble_board_square {
+	display: inline-block;
+}
+
+/* provides some space to each scrabble tiles */
+.block {
+  /*background: green;*/
+  display:inline-block;
+  margin: 10px;
+  /*z-index: 1;*/
+}
+
+#rack {
+	display: inline-block;
+/*	margin: 0 auto;
+	position: relative;*/
+}

@@ -30,3 +30,10 @@ Github URL: http://scparedes.github.io/91.461/assignment7.html
 Assignment 8:
 Github URL: http://scparedes.github.io/91.461/assignment8.html
 I am currently struggling to get the tabs to add and delete without affecting the data that's bound to the sliders.  This problem may or may not persist by the time you grade this.
+
+Assignment 9:
+
+Known Issues:
+Github URL: http://scparedes.github.io/91.461/assignment9.html
+- Letter tiles can be dragged but can’t exactly be placed back in the queue well.
+- Score is kept for initial tile placements but then is inaccurate for new word/arrangements.
